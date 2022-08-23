@@ -1,0 +1,8 @@
+setup :done
+    -level :done
+    -main :dome
+    -setting: dome
+
+player :done
+
+inport img:

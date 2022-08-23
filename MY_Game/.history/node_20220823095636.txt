@@ -1,0 +1,10 @@
+setup :done
+    -level :done
+    -main :dome
+    -setting: dome
+
+player :done
+
+import img:done
+
+animating the player:
