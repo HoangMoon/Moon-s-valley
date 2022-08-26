@@ -12,11 +12,4 @@ animating the player:
 tool use: done
     tool switch :done
 
-seed: done
-
-overlay: done
-
-camera:
-
-import floor: 
-
+seed: 

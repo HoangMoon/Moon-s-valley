@@ -16,7 +16,3 @@ seed: done
 
 overlay: done
 
-camera:
-
-import floor: 
-

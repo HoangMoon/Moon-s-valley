@@ -1,3 +1,5 @@
+from multiprocessing import current_process
+from typing_extensions import Self
 import pygame
 
 class Timer:
@@ -10,7 +12,7 @@ class Timer:
     def activate(self):
         self.active = True
         self.start_time = pygame.time.get_ticks()
-         
+        
     def deactivate(self):
         self.active = False
         self.start_time = 0

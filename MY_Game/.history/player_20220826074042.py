@@ -1,3 +1,4 @@
+from json import tool
 import pygame
 from settings import*
 from support import*
@@ -44,14 +45,12 @@ class Player(pygame.sprite.Sprite):
     #seed
         self.seeds = ['corn', 'tomato']
         self.seed_index = 0
-        self.selected_seed = self.seeds[self.seed_index]
+        self.selected_seed = self.seed[self.seed_index]
     def use_tool(self):
-        # print(self.selected_tool)
-        pass
+        print(self.selected_tool)
 
-    def use_seed(self):
+    def use_seed(seft):
         pass
-
     def import_assets(self):
         self.animations = {'up': [],'down': [],'left': [],'right': [],
 						   'right_idle':[],'left_idle':[],'up_idle':[],'down_idle':[],
@@ -118,7 +117,6 @@ class Player(pygame.sprite.Sprite):
             self.timers['seed use'].activate()
             self.direction = pygame.math.Vector2()
             self.frame_index = 0
-            # print('use seed')
         #change seed use
         if keys[pygame.K_e] and not self.timers['seed switch'].active:
             self.timers['seed switch'].activate()
@@ -127,7 +125,6 @@ class Player(pygame.sprite.Sprite):
             # if seed index > length of seed => seed index = 0
             self.seed_index = self.seed_index if self.seed_index < len(self.seeds) else 0
             self.selected_seed = self.seeds[self.seed_index]
-            # print(self.selected_seed)
     def get_status(self):
         # nếu player ko di chuyển :
         # add _idle vào status

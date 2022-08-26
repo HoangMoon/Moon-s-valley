@@ -1,3 +1,5 @@
+from multiprocessing import current_process
+from typing_extensions import Self
 import pygame
 
 class Timer:
