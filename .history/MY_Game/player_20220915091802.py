@@ -10,7 +10,7 @@ class Player(pygame.sprite.Sprite):
 
         self.import_assets()
         self.status = 'down_idle'
-        self.frame_index = 0
+        self.frame_index =4
 
         # self.image = pygame.Surface((32, 64))
         # self.image.fill('green')
@@ -115,7 +115,7 @@ class Player(pygame.sprite.Sprite):
 
         # seed use
         if keys[pygame.K_LCTRL]:
-                #time for tool use
+                #time for seed use
             self.timers['seed use'].activate()
             self.direction = pygame.math.Vector2()
             self.frame_index = 0

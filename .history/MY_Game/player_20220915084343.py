@@ -67,7 +67,7 @@ class Player(pygame.sprite.Sprite):
 
 # làm animate
     def animate(self,dt):
-        self.frame_index += 4 * dt
+        self.frame_index += 5 * dt
         if self.frame_index >= len(self.animations[self.status]):
             self.frame_index = 0
 

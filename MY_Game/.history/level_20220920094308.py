@@ -2,10 +2,8 @@ import pygame
 from settings import *
 from player import Player
 from overlay import Overlay
-from sprites import Generic, Tree, Water, Wildflower
+from sprites import Generic
 from pytmx.util_pygame import load_pygame
-
-from support import import_folder
 
 class Level:
     def __init__(self):
@@ -21,27 +19,10 @@ class Level:
     def setup(self):
         tmx_data = load_pygame('./data/map.tmx')
         #house:
-        for layer in ['HouseFloor', 'HouseFurnitureBottom']:
+        for layer in ['HouseFloor', 'HouseFurnitureBottom']
             for x, y, surf in tmx_data.get_layer_by_name(layer).tiles():
                 Generic((x * TILE_SIZE,y * TILE_SIZE), surf, self.all_sprites, LAYER['house bottom'])
-        
-        for layer in ['HouseWalls', 'HouseFurnitureTop']:
-            for x, y, surf in tmx_data.get_layer_by_name(layer).tiles():
-                Generic((x * TILE_SIZE,y * TILE_SIZE), surf, self.all_sprites, LAYER['main'])
 
-        #Fence
-        for x, y, surf in tmx_data.get_layer_by_name('Fence').tiles():
-                Generic((x * TILE_SIZE,y * TILE_SIZE), surf, self.all_sprites,)
-        #water
-        water_frames = import_folder('./graphics/water')
-        for x, y, surf in tmx_data.get_layer_by_name('Water').tiles():
-                Water((x * TILE_SIZE,y * TILE_SIZE), water_frames, self.all_sprites)
-        #trees  
-        for obj in tmx_data.get_layer_by_name('Trees'):
-            Tree((obj.x, obj.y), obj.image, self.all_sprites, obj.name)
-        #wildfowers 
-        for obj in tmx_data.get_layer_by_name('Decoration'):
-                Wildflower((obj.x, obj.y), obj.image, self.all_sprites)
 
 
 

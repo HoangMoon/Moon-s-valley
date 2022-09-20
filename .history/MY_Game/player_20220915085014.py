@@ -115,7 +115,7 @@ class Player(pygame.sprite.Sprite):
 
         # seed use
         if keys[pygame.K_LCTRL]:
-                #time for tool use
+                #time for seed use
             self.timers['seed use'].activate()
             self.direction = pygame.math.Vector2()
             self.frame_index = 0

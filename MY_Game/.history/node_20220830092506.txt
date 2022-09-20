@@ -20,9 +20,5 @@ camera: done
 
 import floor:  done
 
-impornt all element àd faking 3D:done
-
-element overlap :
-
-2:16:42
+impornt all element àd faking 3D
 

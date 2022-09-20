@@ -12,9 +12,9 @@ class Player(pygame.sprite.Sprite):
         self.status = 'down_idle'
         self.frame_index = 0
 
-        # self.image = pygame.Surface((32, 64))
-        # self.image.fill('green')
-        # self.rect = self.image.get_rect(center = pos)
+        self.image = pygame.Surface((32, 64))
+        self.image.fill('green')
+        self.rect = self.image.get_rect(center = pos)
 
 	# general setup
         # self.image = self.animations[self.status][self.frame_index]
@@ -23,7 +23,6 @@ class Player(pygame.sprite.Sprite):
         self.image = self.animations[self.status][self.frame_index]
         self.rect = self.image.get_rect(center = pos)
         self.z = LAYER['main']
-
     #movement attributes
         self.direction = pygame.math.Vector2()
         self.pos = pygame.math.Vector2(self.rect.center)
@@ -163,9 +162,9 @@ class Player(pygame.sprite.Sprite):
         
     def update(self, dt):
         self.input()
-        self.get_status()
-        self.update_timers()
-        self.move(dt)
-        self.animate(dt)
+        # self.get_status()
+        # self.update_timers()
+        # self.move(dt)
+        # self.animate(dt)
 
 

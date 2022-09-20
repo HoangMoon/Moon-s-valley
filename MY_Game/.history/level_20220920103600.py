@@ -37,7 +37,7 @@ class Level:
         for x, y, surf in tmx_data.get_layer_by_name('Water').tiles():
                 Water((x * TILE_SIZE,y * TILE_SIZE), water_frames, self.all_sprites)
         #trees  
-        for obj in tmx_data.get_layer_by_name('Trees'):
+        for obj in tmx_data.get_layer_by_name('Tree'):
             Tree((obj.x, obj.y), obj.image, self.all_sprites, obj.name)
         #wildfowers 
         for obj in tmx_data.get_layer_by_name('Decoration'):

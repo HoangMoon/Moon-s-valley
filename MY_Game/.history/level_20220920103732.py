@@ -40,8 +40,8 @@ class Level:
         for obj in tmx_data.get_layer_by_name('Trees'):
             Tree((obj.x, obj.y), obj.image, self.all_sprites, obj.name)
         #wildfowers 
-        for obj in tmx_data.get_layer_by_name('Decoration'):
-                Wildflower((obj.x, obj.y), obj.image, self.all_sprites)
+        # for obj in tmx_data.get_layer_by_name('Decoration'):
+        #         Wildflower((obj.x, obj.y), obj.image, self.all_sprites)
 
 
 
