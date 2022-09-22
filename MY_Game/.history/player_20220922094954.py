@@ -31,8 +31,8 @@ class Player(pygame.sprite.Sprite):
 
 
     #collision
-        self.hitbox = self.rect.copy().inflate((-60,-127))
         self.collision_sprites = collision_sprites
+        self.hitbox = self.rect.copy().inflate((-126,-70))
     #timers
         self.timers = {
             'tool use': Timer(350, self.use_tool),
@@ -150,25 +150,6 @@ class Player(pygame.sprite.Sprite):
         for timer in self.timers.values():
             timer.update()
 
-    def collision(self,direction):
-        for sprite in self.collision_sprites.sprites():
-            if hasattr(sprite, 'hitbox'):
-                if sprite.hitbox.colliderect(self.hitbox):
-                    if direction == 'horizontal':
-                        if self.direction.x > 0 :#moving right
-                            self.hitbox.right = sprite.hitbox.left
-                        if self.direction.x < 0 :#moving left
-                            self.hitbox.left = sprite.hitbox.right
-                        self.rect.centerx = self.hitbox.centerx
-                        self.pos.x = self.hitbox.centerx
-
-                        if direction == 'vertical':
-                            if self.direction.y > 0 :#moving right
-                                self.hitbox.right = sprite.hitbox.top
-                        if self.direction.y < 0 :#moving left
-                            self.hitbox.left = sprite.hitbox.bottom
-                        self.rect.centery = self.hitbox.centery
-                        self.pos.y = self.hitbox.centery
     def move(self, dt):
 
 
@@ -181,14 +162,13 @@ class Player(pygame.sprite.Sprite):
         self.pos.x += self.direction.x *self.speed *dt
         # tạo hộp quanh player
         self.hitbox.centerx = round(self.pos.x) 
-        self.rect.centerx = self.hitbox.centerx
-        self.collision('horizontal')
+        self.rect.centerx = self.pos.x
         #vertical movement
         self.pos.y += self.direction.y *self.speed *dt
         # tạo hộp quanh player
         self.hitbox.centerx = round(self.pos.y)
-        self.rect.centery = self.hitbox.centery
-        self.collision('vertical')
+        self.rect.centery = self.pos.y
+        
     def update(self, dt):
         self.input()
         self.get_status()

@@ -22,10 +22,8 @@ import floor:  done
 
 impornt all element àd faking 3D:done
 
-element overlap : done
+element overlap :
 nếu player ở đằng sau theo trục y thì player sẽ dược hiển thị ở sau vật thể và nguoiwcj lại
-
-collisions: 
 
 2:16:42
 

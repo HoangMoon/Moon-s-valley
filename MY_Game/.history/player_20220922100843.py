@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
 
 
     #collision
-        self.hitbox = self.rect.copy().inflate((-60,-127))
+        self.hitbox = self.rect.copy().inflate((-126,-70))
         self.collision_sprites = collision_sprites
     #timers
         self.timers = {
@@ -162,13 +162,6 @@ class Player(pygame.sprite.Sprite):
                         self.rect.centerx = self.hitbox.centerx
                         self.pos.x = self.hitbox.centerx
 
-                        if direction == 'vertical':
-                            if self.direction.y > 0 :#moving right
-                                self.hitbox.right = sprite.hitbox.top
-                        if self.direction.y < 0 :#moving left
-                            self.hitbox.left = sprite.hitbox.bottom
-                        self.rect.centery = self.hitbox.centery
-                        self.pos.y = self.hitbox.centery
     def move(self, dt):
 
 

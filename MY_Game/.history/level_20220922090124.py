@@ -39,14 +39,14 @@ class Level:
                 Water((x * TILE_SIZE,y * TILE_SIZE), water_frames, self.all_sprites)
         #trees  
         for obj in tmx_data.get_layer_by_name('Trees'):
-            Tree((obj.x, obj.y), obj.image, [self.all_sprites,self.collision_sprites], obj.name)
+            Tree((obj.x, obj.y), obj.image, self.all_sprites, obj.name)
         #wildfowers 
         for obj in tmx_data.get_layer_by_name('Decoration'):
-                Wildflower((obj.x, obj.y), obj.image, [self.all_sprites,self.collision_sprites])
+                Wildflower((obj.x, obj.y), obj.image, self.all_sprites)
         
         
         #player
-        self.player = Player((640,360), self.all_sprites, self.collision_sprites)
+        self.player = Player((640,360), self.all_sprites)
         Generic(
             pos=(0,0),
             surf= pygame.image.load('./graphics/world/ground.png').convert_alpha(),

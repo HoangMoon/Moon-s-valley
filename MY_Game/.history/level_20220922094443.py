@@ -46,7 +46,7 @@ class Level:
         
         
         #player
-        self.player = Player((640,360), self.all_sprites, self.collision_sprites)
+        self.player = Player((640,360), self.all_sprites,self.collision_sprites)
         Generic(
             pos=(0,0),
             surf= pygame.image.load('./graphics/world/ground.png').convert_alpha(),

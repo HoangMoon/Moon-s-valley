@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
 
 
     #collision
-        self.hitbox = self.rect.copy().inflate((-60,-127))
+        self.hitbox = self.rect.copy().inflate((-126,-70))
         self.collision_sprites = collision_sprites
     #timers
         self.timers = {
@@ -150,25 +150,18 @@ class Player(pygame.sprite.Sprite):
         for timer in self.timers.values():
             timer.update()
 
-    def collision(self,direction):
-        for sprite in self.collision_sprites.sprites():
-            if hasattr(sprite, 'hitbox'):
-                if sprite.hitbox.colliderect(self.hitbox):
-                    if direction == 'horizontal':
-                        if self.direction.x > 0 :#moving right
-                            self.hitbox.right = sprite.hitbox.left
-                        if self.direction.x < 0 :#moving left
-                            self.hitbox.left = sprite.hitbox.right
-                        self.rect.centerx = self.hitbox.centerx
-                        self.pos.x = self.hitbox.centerx
+    # def collision(self,direction):
+    #     for sprite in self.collision_sprites.sprites():
+    #         if hasattr(sprite, 'hitbox'):
+    #             if sprite.hitbox.colliderect(self.hitbox):
+    #                 if direction == 'horizontal':
+    #                     if self.direction.x > 0 :#moving right
+    #                         self.hitbox.right = sprite.hitbox.left
+    #                     if self.direction.x < 0 :#moving left
+    #                         self.hitbox.left = sprite.hitbox.right
+    #                     self.rect.centerx = self.hitbox.centerx
+    #                     self.pos.x = self.hitbox.centerx
 
-                        if direction == 'vertical':
-                            if self.direction.y > 0 :#moving right
-                                self.hitbox.right = sprite.hitbox.top
-                        if self.direction.y < 0 :#moving left
-                            self.hitbox.left = sprite.hitbox.bottom
-                        self.rect.centery = self.hitbox.centery
-                        self.pos.y = self.hitbox.centery
     def move(self, dt):
 
 
@@ -188,7 +181,7 @@ class Player(pygame.sprite.Sprite):
         # tạo hộp quanh player
         self.hitbox.centerx = round(self.pos.y)
         self.rect.centery = self.hitbox.centery
-        self.collision('vertical')
+        
     def update(self, dt):
         self.input()
         self.get_status()

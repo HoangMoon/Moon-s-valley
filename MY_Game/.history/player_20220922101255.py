@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
 
 
     #collision
-        self.hitbox = self.rect.copy().inflate((-60,-127))
+        self.hitbox = self.rect.copy().inflate((-126,-70))
         self.collision_sprites = collision_sprites
     #timers
         self.timers = {
